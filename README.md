@@ -1,32 +1,81 @@
-# Project Documentation
+# Academic Performance Prediction
 
-## Overview
-This project aims to predict academic performance using various machine learning techniques. The goal is to assist educators and institutions in understanding the factors affecting student performance and providing insights into potential improvements.
+A machine learning project to predict student academic performance based on mental health indicators and social media usage.
 
-## Usage Examples
-1. **Data Preprocessing**: Steps to clean and preprocess the dataset before feeding it into the models.
-2. **Model Training**: Instructions on how to train the model using the training data.
-3. **Making Predictions**: How to use the trained model to make predictions on new data.
+## 📋 Project Overview
 
-## Technologies
-- Python
-- Scikit-learn
-- Pandas
-- NumPy
-- Matplotlib
-- Jupyter Notebooks
+This project uses **Logistic Regression** to predict whether a student's academic performance will be affected based on:
+- Mental Health Scores
+- Conflicts Over Social Media
+- Social Media Impact on Academic Performance
 
-## Dataset Information
-This project uses a dataset containing various attributes that influence academic performance, including demographic information, study habits, and more.
+## ⚡ Usage Examples
 
-## Results
-The performance of the models can be evaluated using different metrics such as accuracy, precision, recall, and F1-score. Detailed results are documented in the results section of the repository.
+```python
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix, accuracy_score
 
-## Contributing Guidelines
-Contributions are welcome! Please adhere to the following guidelines:
-- Fork the repository.
-- Create a new branch for your feature or bug fix.
-- Write tests for your changes.
-- Submit a pull request explaining your changes in detail.
+# Load data
+# df = pd.read_csv("data.csv")
 
-For more detailed instructions on contributing to this project, please see the CONTRIBUTING.md file.
+# Train-test split, preprocessing
+# X_train, X_test, y_train, y_test = ...
+
+# Train model
+lr = LogisticRegression()
+lr.fit(X_train, y_train)
+
+# Make predictions
+y_pred = lr.predict(X_test)
+
+# Evaluate
+cm = confusion_matrix(y_test, y_pred)
+accuracy = accuracy_score(y_test, y_pred)
+print("Confusion Matrix:\n", cm)
+print("Accuracy:", accuracy)
+```
+
+## 🖥 Technologies Used
+
+- **Python** 🐍
+- **Pandas & NumPy** for data handling
+- **Scikit-learn** for ML algorithms & metrics
+- **Matplotlib / Seaborn** for visualization
+
+## 📊 Dataset Information
+
+- **Dataset columns:** Mental_Health_Score, Conflicts_Over_Social_Media, Affects_Academic_Performance
+- **Source:** Collected/Generated survey data of students
+
+## 📈 Results / Performance Metrics
+
+- **Confusion Matrix:** Shows model predictions vs. actual values
+- **Accuracy, Precision, Recall, F1-score:** Comprehensive evaluation metrics
+- **Model Performance:** Logistic Regression model shows good predictive performance
+
+*For exact metrics, refer to the Jupyter notebook in the repository.*
+
+## 🖼 Screenshots
+
+Add screenshots or visualization outputs here
+
+```
+![Confusion Matrix Example](path/to/confusion_matrix.png)
+```
+
+## 🤝 Contributing Guidelines
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/improvement`)
+3. Implement improvements or fixes
+4. Commit your changes (`git commit -m 'Add improvement'`)
+5. Push to the branch (`git push origin feature/improvement`)
+6. Submit a Pull Request
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## ✉️ Contact
+
+For questions or suggestions, feel free to open an issue or contact the repository maintainer.
