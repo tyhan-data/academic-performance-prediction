@@ -55,13 +55,7 @@ print("Accuracy:", accuracy)
 
 *For exact metrics, refer to the Jupyter notebook in the repository.*
 
-## 🖼 Screenshots
 
-Add screenshots or visualization outputs here
-
-```
-![Confusion Matrix Example](path/to/confusion_matrix.png)
-```
 
 ## 🤝 Contributing Guidelines
 
